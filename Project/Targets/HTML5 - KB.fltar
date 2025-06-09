@@ -57,27 +57,7 @@
       http-equiv="Content-Security-Policy"
       content=" sandbox allow-scripts; base-uri 'self'; default-src *; style-src * 'unsafe-inline'; script-src * blob: 'unsafe-inline'; img-src * 'unsafe-inline'; media-src * 'unsafe-inline'; font-src * 'unsafe-inline'; connect-src * 'unsafe-inline'; worker-src *; frame-src * 'unsafe-inline'; form-action *;" />
   </MetaTags>
-  <PostBuild>$sitemap = "E:\Automox\Output\arun_kumar1\HTML5 - KB\sitemap.xml"
-$maxRetries = 5
-$retryCount = 0
-
-while ($retryCount -lt $maxRetries) {
-    try {
-        $stream = [System.IO.File]::Open($sitemap, 'Open', 'ReadWrite', 'None')
-        $stream.Close()
-        break
-    } catch {
-        Write-Host "File locked, retrying in 5 seconds..."
-        Start-Sleep -Seconds 5
-        $retryCount++
-    }
-}
-
-if ($retryCount -eq $maxRetries) {
-    Write-Error "File still locked after multiple attempts, aborting."
-    exit 1
-}
-
-# Continue with your sitemap cleanup here
-</PostBuild>
+  <PostBuild></PostBuild>
+  <PreBuild>powershell.exe -ExecutionPolicy Bypass -File "$(ProjectDirectory)\UpdateLastCommitDates.ps1"
+</PreBuild>
 </CatapultTarget>

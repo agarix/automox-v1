@@ -8,6 +8,7 @@
         <h1>Agent Command Line Guide</h1>
         <p><label class="badgeNew">New</label><MadCap:variable name="General.LastUpdated" />
         </p>
+		<p>Last updated: <span class="last-commit-date">09 June, 2025</span></p>
         <p>This guide provides instructions on managing the Automox agent via command-line interface across different operating systems. It covers topics such as installation paths, setting access keys, assigning device groups, deregistering devices, checking compatibility, redirecting output, configuring script execution directories, and reinstalling the agent. This guide is essential for users seeking to efficiently control and customize the Automox agent's behavior through command-line operations.</p>
         <h2>Operating System Install Locations</h2>
         <p>Based on the operating system, the Automox agent installs to these locations:<br /></p>
@@ -141,7 +142,7 @@ net start amagent</MadCap:codeSnippetBody>
         <p><b>macOS</b>: <code>/Library/Application Support/Automox/</code></p>
         <p><b>Linux</b>: <code>/var/lib/amagent</code></p>
         <p>If you prefer these actions to run from a different default path, use an agent command to set that on the device (<code>--setexecdir</code>). The next time the Automox agent service is restarted, it will use the newly specified location for running its scripts. Some endpoint security applications block scripts that don't originate from a designated location. Therefore, the most common reason to modify this setting is to move it to a trusted or preferred directory for your security software.</p>
-        <div class="info"><b>Note</b>: For macOS, do not set the execdir to any directory or subdirectory of a user’s Desktop, Downloads, or Documents folder. Temporary directories created for executing commands are not cleaned up if they are in an OS protected special location. See also<a href="https://support.apple.com/en-gb/guide/mac-help/mchld5a35146/10.15/mac/10.15" rel="nofollow"> Control access to your files and folders on Mac</a>.</div>
+        <div class="info"><b>Note</b>: For macOS, do not set the execdir to any directory or subdirectory of a user�s Desktop, Downloads, or Documents folder. Temporary directories created for executing commands are not cleaned up if they are in an OS protected special location. See also<a href="https://support.apple.com/en-gb/guide/mac-help/mchld5a35146/10.15/mac/10.15" rel="nofollow"> Control access to your files and folders on Mac</a>.</div>
         <p>Output from <code>amagent --help</code>:</p>
         <MadCap:codeSnippet>
             <MadCap:codeSnippetCopyButton />
