@@ -291,7 +291,7 @@ popupObserver.observe(document.body, { childList: true, subtree: true });
 /* published on text inserted */
 
 document.addEventListener("DOMContentLoaded", function () {
-		const dateSpans = document.querySelectorAll("span.mc-variable.General\\2e LastUpdated.variable");
+		const dateSpans = document.querySelectorAll("span.last-commit-date");
   
 		dateSpans.forEach(function (span) {
 				// Create a new text node
@@ -301,6 +301,5 @@ document.addEventListener("DOMContentLoaded", function () {
 				span.insertBefore(label, span.firstChild);
 			});
 	});
-
 
 
