@@ -29,7 +29,9 @@
   MoveOutputContentToRoot="true"
   ContentInclusionType="Referenced"
   GetLatestBeforeCompile="true"
-  SearchResultsSkin="/Project/Skins/Search.flskn">
+  SearchResultsSkin="/Project/Skins/Search.flskn"
+  GenerateWebSafeImages="true"
+  WebSafeFileExtension="png">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

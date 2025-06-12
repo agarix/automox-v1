@@ -130,6 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
+
+
+
+
 				// Now that all .customTocItem classes are set, target their parent <a>
 const customTocLists = mainTOC.querySelectorAll("ul.customTocItem");
 
@@ -201,27 +205,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*scroll backtotop*/
 document.addEventListener("DOMContentLoaded", function () {
-		const bodyContainer = document.querySelector(".body-container");
 
-		if (bodyContainer) {
-			const myButton = document.getElementById("myBtn");
+		const myButton = document.getElementById("myBtn");
+		if (!myButton) {
+		
+			return;
+		}
+
+		function initializeScrollBehavior(scrollTarget, targetName) {
 
 			myButton.addEventListener("click", function () {
-					bodyContainer.scrollTo({ top: 0, behavior: "smooth" });
+					scrollTarget.scrollTo({ top: 0, behavior: "smooth" });
 					window.scrollTo({ top: 0, behavior: "smooth" });
 				});
 
 			function toggleButtonVisibility() {
-				const containerScrolled = bodyContainer.scrollTop > 20;
-				const pageScrolled = window.pageYOffset > 20;
-				myButton.style.display =
-					containerScrolled || pageScrolled ? "block" : "none";
+				const containerScrolled =
+					scrollTarget.scrollTop > 20 || window.pageYOffset > 20;
+
+				myButton.style.display = containerScrolled ? "block" : "none";
 			}
 
-			bodyContainer.addEventListener("scroll", toggleButtonVisibility);
+			scrollTarget.addEventListener("scroll", toggleButtonVisibility);
 			window.addEventListener("scroll", toggleButtonVisibility);
+			toggleButtonVisibility();
 		}
+
+		let scrollTarget = document.querySelector(".main-wrapper");
+		if (scrollTarget) {
+			initializeScrollBehavior(scrollTarget, ".main-wrapper");
+		} else {
+
+			const observer = new MutationObserver(() => {
+				const found = document.querySelector(".main-wrapper");
+			if (found) {
+				observer.disconnect();
+				initializeScrollBehavior(found, ".main-wrapper (late)");
+			}
+			});
+
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
 	});
+
+
+	
+
+
+
+
 
 /* pagination search */
 document.addEventListener("DOMContentLoaded", function () {
@@ -303,3 +335,69 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 
+	
+	window.addEventListener('DOMContentLoaded', function () {
+		const bodyContainer = document.querySelector('.body-container');
+		const footer = document.querySelector('.footer.center');
+
+		if (!bodyContainer || !footer) return;
+
+		// Step 1: Create a new wrapper div
+		const wrapper = document.createElement('div');
+		wrapper.className = 'main-wrapper';
+
+		// Step 2: Insert the wrapper before body-container
+		bodyContainer.parentNode.insertBefore(wrapper, bodyContainer);
+
+		// Step 3: Move body-container into the wrapper
+		wrapper.appendChild(bodyContainer);
+
+		// Step 4: Move footer into the wrapper, after body-container
+		wrapper.appendChild(footer);
+	});
+
+
+	// Change Snippet Copy text to "Copied"
+document.addEventListener('DOMContentLoaded', function () {
+		const copyButtons = document.querySelectorAll('.codeSnippetCopyButton');
+
+		copyButtons.forEach(button => {
+			button.addEventListener('click', function () {
+				const originalText = button.textContent;
+
+				// Change text to "Copied"
+				button.textContent = 'Copied';
+
+				// Optional: Add fade effect (CSS handles it below)
+				button.classList.add('copied');
+
+				// Revert back after 2 seconds
+				setTimeout(() => {
+					button.textContent = originalText;
+				button.classList.remove('copied');
+			}, 2000);
+	});
+});
+	});
+
+
+	// Wrapping table in DIV FOR fIX HEADER
+
+
+document.addEventListener("DOMContentLoaded", function () {
+		const tables = document.querySelectorAll("table.TableStyle-ax_tables");
+
+		tables.forEach((table) => {
+			// Skip if already wrapped
+			if (table.parentElement.classList.contains("table-scroll-container")) return;
+
+		const wrapper = document.createElement("div");
+		wrapper.className = "table-scroll-container";
+
+		// Insert wrapper before the table and move table inside it
+		table.parentNode.insertBefore(wrapper, table);
+		wrapper.appendChild(table);
+
+		console.log("Wrapped a table with .table-scroll-container");
+	});
+});

@@ -1628,7 +1628,7 @@ body.dark .TableStyle-ax_tables tbody > tr > td {
 table.TableStyle-ax_tables thead {
     /* position: fixed; */
     position: sticky;
-    top: -18px;
+    top: 0px;
 }
 
 
@@ -1650,3 +1650,11 @@ table.TableStyle-ax_tables {
     overflow-y: auto;
     max-height: 300px;
 }}
+
+
+.table-scroll-container {
+    max-height: 600px;
+    overflow-y: auto;
+      scrollbar-width: thin;
+    scrollbar-color: #c9c9c9 #f1f1f1;
+}

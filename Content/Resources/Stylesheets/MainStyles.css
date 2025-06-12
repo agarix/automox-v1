@@ -1307,6 +1307,7 @@ ul.sidenav li a.selected .tocRoadmap::before
 {
 	padding-bottom: 10px;
 	margin-bottom: 6px;
+	padding-top:10px;
 }
 
 nav.title-bar
@@ -1680,7 +1681,7 @@ li.tree-node:has(a:hover)::before
 
 .home-tiles.tilesMox .automoxTiles
 {
-	height: 289px;
+	height: 226px;
 	background: white;
 	transition: background 0.3s ease;
 	border-radius: 10px;
@@ -1688,10 +1689,12 @@ li.tree-node:has(a:hover)::before
 	cursor: pointer;
 	margin: 0px 11px 14px 0px !important;
 	float: none !important;
-	padding: 34px 0px;
+	padding: 9px 0px;
 	width: 50%;
 }
-
+.updates ul.menu._Skins_HomeMenu.mc-component,.newTopics ul.menu._Skins_HomeMenu.mc-component{
+display:block !important;
+}
 .topic-hero.homeMox img
 {
 	margin: auto;
@@ -1773,6 +1776,7 @@ li.tree-node:has(a:hover)::before
 	color: #838FA4;
 	font-size: 16px;
 	line-height: 25px;
+	list-style:disc;
 }
 
 .recentUpdates .updates div,
@@ -1786,7 +1790,7 @@ li.tree-node:has(a:hover)::before
 .recentUpdates .newTopics
 {
 	max-width: 100%;
-	height: 289px;
+	height: 229px;
 	background: white;
 	padding: 25px;
 	border-radius: 10px;
@@ -1811,6 +1815,7 @@ li.tree-node:has(a:hover)::before
 .recentUpdates .newTopics li::marker
 {
 	font-size: 14px;
+	color:#505050;
 }
 
 .automoxLinks .home-section
@@ -2041,7 +2046,32 @@ li.tree-node:has(a:hover)::before
 @media (max-width: 768px)
 {
 
+.updatedArticles ul.menu._Skins_HomeMenu.mc-component li > a {
+    font-weight: 500;
+    font-size: 16px !important;
+    text-align: left;
+    font-family: 'Roboto';
+    line-height: 26px;
+}
+.articleSections {
+   
+    flex-direction: column;
+}
+.updatedLeft h2, .articleRight h2 {
+    margin-top: 0px !important;
+    color: #383838;
+    font-size: 20px;
+    padding-left: 7px;
+    margin-bottom: 11px;
+}
 
+.updatedLeft, .articleRight{
+width:100% !important;
+}
+
+.recentList, .topicList {
+    height: auto !important;
+}
 	.home-tiles.tilesMox .automoxTiles
 	{
 		height: 200px;
@@ -2072,7 +2102,7 @@ li.tree-node:has(a:hover)::before
 	.recentUpdates .updates,
 	.recentUpdates .newTopics
 	{
-		min-height: 280px !important;
+		height: 241px !important;
 		margin-right: 12px;
 		height: auto;
 		padding: 25px 20px 0px;
@@ -2294,11 +2324,17 @@ li.tree-node:has(a:hover)::before
 
 	.home-tiles.tilesMox .automoxTiles
 	{
-		height: 239px;
+		height: 205px;
 		padding-top: 10px;
 		margin-bottom: 0px;
 	}
+div.home-tiles > div {
+    padding-right: 0px;
+}
 
+.home-layout {
+    margin-top: 12px;
+}
 	.recentUpdates
 	{
 		padding: 0px 23px;
@@ -2532,7 +2568,7 @@ div.home-master-page-footer p
 
 .footer.center
 {
-	height: 48px;
+	
 	background: white;
 	border: none;
 	padding-top: 10px;
@@ -2598,6 +2634,16 @@ body.other-topics h2
 	border-radius: 5px;
 	font-size: 16px;
 	padding: 1px 11px;
+}
+
+.codeSnippetCopyButton {
+  transition: opacity 0.3s ease;
+}
+
+.codeSnippetCopyButton.copied {
+      background-color: #ffffff !important;
+    color: #485874 !important;
+    border: 1px solid #485874;
 }
 
 .other-topics .body-container li
@@ -4093,12 +4139,15 @@ ul.sidenav li.tocSoftware a:hover {
     background-color: transparent !important;
     color: #CCCCCC !important;
     padding-left: 0px;
+	font-size: 18px !important;
 }
 
 ul.sidenav li.tocSoftware a {
     padding-left: 0px;
     font-weight: 800;
     font-size: 18px;
+	padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 body.dark .MCDropDownBody {
@@ -4115,9 +4164,7 @@ body.dark .togglerBody {
     margin-top: 0px !important;
 }
 
-table.TableStyle-ax_tables {
-    margin-top: 15px;
-}
+
 
 .other-topics .info p, div.prereqs p {
     margin: 0px;
@@ -4127,3 +4174,169 @@ table.TableStyle-ax_tables {
 body.dark.other-topics .body-container ol li, body.dark.other-topics .body-container ul li {
     color: #C0C7D2 !important;
 }
+
+.recentUpdates .updates ul li a, .recentUpdates .newTopics ul li a {
+    color: #000 !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    font-weight: 100 !important;
+    text-align: left;
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Roboto';
+}
+
+.recentUpdates .updates ul.menu._Skins_HomeMenu.mc-component, .recentUpdates .newTopics ul.menu._Skins_HomeMenu.mc-component {
+    padding-left: 31px;
+	    margin-top: 17px;
+		overflow-y: hidden;
+    height: 73px;
+}
+
+.sticky-menu.sticky.is-at-top.is-stuck {
+    position: relative;
+    margin-top: 0px !important;
+}
+
+body.dark .recentUpdates .updates ul li a, body.dark .recentUpdates .newTopics ul li a {
+    color: #dbdbdb !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    font-weight: 100 !important;
+    text-align: left;
+    width: 38ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Roboto';
+}
+
+
+.other-topics ul.menu._Skins_HomeMenu.mc-component a {
+    color: #000 !important;
+    font-size: 16px !important;
+    line-height: 25px;
+    font-weight: 100 !important;
+    text-align: left;
+    font-family: 'Roboto';
+}
+
+.articleSections {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.updatedLeft, .articleRight {
+    width: 50%;
+}
+.updatedLeft h2, .articleRight h2 {
+    margin-top: 0px !important;
+    color: #383838;
+    font-size: 24px;
+    padding-left: 7px;
+    margin-bottom: 11px;
+}
+
+.recentList, .topicList {
+    background: white;
+    margin: 5px;
+    padding: 13px 23px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.updatedArticles ul.menu._Skins_HomeMenu.mc-component{
+display:block !important;
+
+}
+
+body.updatedArticles nav.sidenav-wrapper {
+    display: none;
+}
+
+.updatedArticles ul.menu._Skins_HomeMenu.mc-component li > a {
+    color: #404040;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Roboto';
+	line-height:26px;
+}
+
+.updatedArticles ul.menu._Skins_HomeMenu.mc-component li.tree-node-leaf {
+    height: auto;
+    border-bottom: 1px solid #e6e6e699;
+    padding-top: 16px;
+    padding-bottom: 2px;
+}
+
+.recentUpdates .updates ul li a:hover, .recentUpdates .newTopics ul li a:hover {
+    color: #009CC8 !important;
+}
+
+body.dark .recentList, body.dark .topicList {
+    background: #152338;
+    margin: 5px;
+    padding: 13px 23px;
+    border-radius: 10px;
+    height: auto;
+    border: 1px solid #2D384A;
+}
+
+body.dark .updatedLeft h2, body.dark .articleRight h2 {
+    margin-top: 0px !important;
+    color: #ffffff;
+    font-size: 24px;
+    padding-left: 7px;
+    margin-bottom: 11px;
+}
+body.dark.updatedArticles ul.menu._Skins_HomeMenu.mc-component li.tree-node-leaf {
+    border-bottom: 1px solid #ffffff14;
+}
+.main-wrapper {
+    flex: 1 1;
+    overflow: auto;
+}
+html.home-topic._Skins_Side_Navigation .body-container, .updatedArticles.body-container{
+overflow:unset;
+}
+.searchTopic .body-container {
+    overflow: unset;
+}
+
+body.updatedArticles .footer.center {
+    margin-top: 20px;
+}
+.updatedArticles ul.menu._Skins_HomeMenu.mc-component li > a:hover {
+    color: #009CC8;
+}
+
+body.dark.updatedArticles ul.menu._Skins_HomeMenu.mc-component li > a {
+    color: #d0d0d0;
+}
+
+body.dark.updatedArticles ul.menu._Skins_HomeMenu.mc-component li > a:hover {
+    color: #009CC8;
+}
+ul.custom-header-nav li a:hover {
+    color: #00a9d6 !important;
+}
+img.img-commune{
+height:57px;
+}
+
+.joinCommunity:hover h3 {
+    color: white;
+}
+
+.joinCommunity:hover a {
+    color: white;
+}
+
+body.dark .joinCommunity:hover a{
+color:#000;
+}
+

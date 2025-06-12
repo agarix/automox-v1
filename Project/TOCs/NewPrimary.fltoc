@@ -39,9 +39,6 @@
     Link="/Project/TOCs/SectionTOCs/Miscellaneous.fltoc"
     Class="tocMiscellaneous"></TocEntry>
   <TocEntry
-    Title="[%=System.LinkedTitle%]"
-    Link="/Content/toggler.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-  <TocEntry
     Title="Automox FAQs"
     Link="/Content/Product Documentation/FAQs/Automox FAQs.htm"
     Class="tocFaq" />
